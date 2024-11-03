@@ -1,0 +1,5 @@
+# ignore all pycache files
+**/__pycache__
+
+# space for personal notes
+/personal_notes/
