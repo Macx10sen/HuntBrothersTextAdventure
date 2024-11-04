@@ -11,6 +11,7 @@
     - what synonyms will we recognize (also shorthand)
     - build the 'help' page
 * play zork
+* set up main branch protections and merge requests
 
 # Kolter
 * practice git
