@@ -3,6 +3,7 @@
 * practice git
 * shadow someone else 
 * play zork
+* learn version control in pycharm via github
 
 # Marcus 
 * build command lists
