@@ -12,6 +12,9 @@
     - build the 'help' page
 * play zork
 * set up main branch protections and merge requests
+* build general use methods for:
+    - terminal output
+    - user input
 
 # Kolter
 * practice git
@@ -19,9 +22,7 @@
 
 
 # To Be Assigned
-* build general use methods for:
-    - terminal output
-    - user input
+
 * python objects
     * setup user class
         * setup inventory
