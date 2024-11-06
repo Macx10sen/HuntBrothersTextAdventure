@@ -1,0 +1,37 @@
+rooms:
+  - name: 'Entrance Hall'
+    description: 'A grand, echoing entrance with marble floors.'
+    exits:
+      north: 'Library'
+      east: 'Armory'
+    items:
+      - name: 'Candle'
+        description: 'A short, burned down candle.'
+      - name: 'Rusty Key'
+        decription: 'A rather large, antique key with some surface rust.'
+
+  - name: 'Library'
+    description: 'Dusty shelves filled with ancient tomes. A faint smell of parchment lingers.'
+    exits:
+      south: 'Entrance Hall'
+      west: 'Study'
+    items:
+      - name: 'Ancient Book'
+        description: 'A book bound with black leather. It is covered in unfamiliar runes.'
+      - name: 'Reading Lamp'
+        location: 'A reading lamp sits on a side table, glowing softly'
+        type: 'light'
+        state: 'on'
+        descriptions:
+          on: 'A softly glowing reading lamp.'
+          off: 'A reading lamp that has been turned off.'
+
+  - name: 'Armory'
+    description: "Racks of rusty weapons and armor. There's a feeling of old battles here."
+    exits:
+      west: 'Entrance Hall'
+    items:
+      - name: 'Sword'
+        description: 'A rusty short sword.'
+      - name: 'Helmet'
+        description: 'A roman looking helmet. It looks like someone took a pair of scissors to the hair on top...'
