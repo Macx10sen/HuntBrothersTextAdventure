@@ -20,6 +20,7 @@
 	-branch off of develop
 	-any introduction a new markdown file (.md)
 	-name the branch note/[docuementname]
+	-no merge request required
 	*meeting notes
 		-new markdown files made for every weekly all hands meeting.
 		-name note/meeting/[dateyymmdd]
