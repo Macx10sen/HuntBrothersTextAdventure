@@ -1,64 +1,73 @@
-class Item:
-    def __init__(self, name, description, value):
+class Item():
+    def __init__(self, name, description, value, weight):
         self.name = name
         self.description = description
         self.value = value
+        self.weight = weight
+        self.type = self.__class__.__name__.lower()
 
 class Weapon(Item):
-    def __init__(self, name, description, value, damage, durability):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, damage, durability):
+        super().__init__(name, description, value, weight)
         self.damage = damage
         self.durability = durability
+
 class Armor(Item):
-    def __init__(self, name, description, value, defense_rating, durability):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, defense_rating, durability):
+        super().__init__(name, description, value, weight)
         self.defense_rating = defense_rating
         self.durability = durability
 
 class Tool(Item):
-    def __init__(self, name, description, value, usage_count):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, usage_count):
+        super().__init__(name, description, value, weight)
         self.usage_count = usage_count
 
 class Consumable(Item):
-    def __init__(self, name, description, value, effect, amount):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, effect, amount):
+        super().__init__(name, description, value, weight)
         self.effect = effect
         self.amount = amount
 
 class Light(Item):
-    def __init__(self, name, description, value, brightness, duration):
-        super().__init__(name, description, value)
-        self.brightness = brightness
-        self.duration = duration
-        self.state = 'off'  # Can be 'on' or 'off'
+    def __init__(self, name, description, value, weight, duration_turns, state='off'):
+        super().__init__(name, description, value, weight)
+        self.duration = duration_turns
+        self.state = state
 
 class KeyItem(Item):
-    def __init__(self, name, description, value, purpose):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, purpose):
+        super().__init__(name, description, value, weight)
         self.purpose = purpose
 
 class Bag(Item):
-    def __init__(self, name, description, value, capacity):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, capacity, inventory):
+        super().__init__(name, description, value, weight)
         self.capacity = capacity
-        self.contents = []
+        self.inventory = {}
+        for item in inventory:
+            self.inventory[item] = inventory[item]
 
 class MagicItem(Item):
-    def __init__(self, name, description, value, effect, charges_remaining):
-        super().__init__(name, description, value)
+    def __init__(self, name, description, value, weight, effect, charges_remaining):
+        super().__init__(name, description, value, weight)
         self.effect = effect
         self.charges_remaining = charges_remaining
 
-class WorldItem(Item):
+class WorldItem():
     def __init__(self, name, description):
-        super().__init__(name, description, value=0)
+        self.name = name
+        self.description = description
+        self.type = self.__class__.__name__.lower()
 
 class Container(WorldItem):
-    def __init__(self, name, description, is_locked):
+    def __init__(self, name, description, inventory, capacity, is_locked):
         super().__init__(name, description)
         self.is_locked = is_locked
-        self.contents = []
+        self.capacity = capacity
+        self.inventory = {}
+        for item in inventory:
+            self.inventory[item] = inventory[item]
 
 class Trap(WorldItem):
     def __init__(self, name, description, condition, damage):
@@ -67,7 +76,11 @@ class Trap(WorldItem):
         self.damage = damage
 
 class Door(WorldItem):
-    def __init__(self, name, description, condition, is_locked):
+    def __init__(self, name, description, condition, exit_direction, is_locked):
         super().__init__(name, description)
         self.condition = condition
+        self.exit_direction = exit_direction
         self.is_locked = is_locked
+
+if __name__ == '__main__':
+    pass
