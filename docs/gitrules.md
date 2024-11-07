@@ -25,6 +25,8 @@
 	*meeting notes
 		-new markdown files made for every weekly all hands meeting.
 		-name docs/meeting/[dateyymmdd] example: docs/meeting/241106 <- this will sort the files numerically by date with most recent at the top
+		-actual file to be named Myymmdd example M241110
+		-template saved to file path docs/meetings/M_template
 
 
 
