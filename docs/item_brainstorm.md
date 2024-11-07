@@ -23,6 +23,35 @@
 * backpack?
 * satchel
 * fanny pack
+* crossbow bolts
+* pickaxe
+* potions
+* wands
+* cloaks
+* boots
+* robes
+* chest armor
+* map
+* spell book
+* bestiary
+* rope
+* lockpick set
+* bag of sand
+* fishing rod
+* coin
+* gems
+* pocket watch
+* mirror shard
+* mushroom
+* cog
+* flag
+* voodoo doll
+* whistle of the dead
+* locket
+* bag of bones
+* poison belt
+* key ring
+* journal
 
 
 
@@ -42,3 +71,36 @@
 * car
 * trunk of a car
 * car glovebox
+* bookshelf
+* fireplace
+* well
+* wardrobe
+* statue
+* piano
+* workbench
+* crumbling wall
+* barrel
+* oven
+* grandfather clock
+* throne
+* tapestry
+* mirror
+* crate
+* bridge
+* cauldron
+* statue pedestal
+* fountain
+* shrine
+* pile of rocks/leaves/wood
+
+
+
+
+# Other Items
+* trapdoor
+* doorway
+* hidden doorway
+* hidden switch
+* light switch
+* presure plate
+* iron gate
