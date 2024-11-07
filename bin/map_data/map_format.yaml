@@ -8,5 +8,5 @@ rooms:
       - name: 'Item Name'
         description: 'Item Description'
         location: 'Initial Item Location (include world_item?)'
-        type: 'Item Type'
+        item_type: 'Item Type'
         state: 'Item State (if needed)'

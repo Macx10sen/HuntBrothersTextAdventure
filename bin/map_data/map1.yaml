@@ -20,7 +20,7 @@ rooms:
         description: 'A book bound with black leather. It is covered in unfamiliar runes.'
       - name: 'Reading Lamp'
         location: 'A reading lamp sits on a side table, glowing softly'
-        type: 'light'
+        item_type: 'light'
         state: 'on'
         descriptions:
           on: 'A softly glowing reading lamp.'
