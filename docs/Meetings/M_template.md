@@ -1,14 +1,14 @@
-#date
+# Date
 
 
-#Agenda (add items up to meeting)
-*
-*
-*
-*
-*
-#Meeting notes (add items during meeting)
-*
-*
-*
+# Agenda (add items up to meeting)
+* 
+* 
+* 
+* 
+* 
+# Meeting notes (add items during meeting)
+* 
+* 
+* 
 *
