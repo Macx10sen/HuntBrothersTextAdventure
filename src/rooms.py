@@ -1,11 +1,10 @@
 #rooms
 
 class Room: #create Room class
-  def __init__(self, name, description, items): #define room
+  def __init__(self, name, description): #define room
     self.name = name
     self.description = description
     self.exits = {} #dictionary for exits, as the direction defines also the room that the direction will take you to
-    self.items = items
 
   def __str__(self):
     return self.name
