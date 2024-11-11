@@ -104,3 +104,21 @@
 * light switch
 * presure plate
 * iron gate
+
+
+
+
+Item:
+    PlayerItem
+        Weapon
+        Armor
+        Tool
+        Consumable
+        Light
+        KeyItem
+        Bag
+        MagicItem
+    WorldItem
+        Container
+        Trap
+        Door
