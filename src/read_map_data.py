@@ -9,6 +9,5 @@ rooms = {}
 for room in room_data['rooms']:
     name = room['name']
     description = room['description']
-    items = room['items']
-    rooms[name] = Room(name, description, items)
+    rooms[name] = Room(name, description)
 print(rooms)
