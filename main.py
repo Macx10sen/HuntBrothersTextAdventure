@@ -11,6 +11,4 @@ while True:
     print(current_room.exits)
     command = input('Input your command: ')
     print(f'You input {command}')
-    #current_room = rooms[current_room.exits['north']]
-    current_room = rooms['Library']
-
+    current_room = rooms[current_room.exits['north']]

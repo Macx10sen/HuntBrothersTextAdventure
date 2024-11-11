@@ -10,6 +10,7 @@ rooms:
     exits:
       south: 'Entrance Hall'
       west: 'Study'
+
   - name: 'Armory'
     description: "Racks of rusty weapons and armor. There's a feeling of old battles here."
     exits:

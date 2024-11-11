@@ -2,11 +2,4 @@ rooms:
   - name: 'Room Name'
     description: 'Room Description'
     exits:
-      north: 'North Room Name'
-      east: 'East Room Name'
-    items:
-      - name: 'Item Name'
-        description: 'Item Description'
-        location: 'Initial Item Location (include world_item?)'
-        item_type: 'Item Type'
-        state: 'Item State (if needed)'
+      direction: 'Room Name'
