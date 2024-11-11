@@ -4,7 +4,7 @@ rooms = get_rooms()
 current_room = rooms['Entrance Hall']
 
 while True:
-    current_room.verbose()
+    current_room.output('verbose')
     command = input('Input your command: ')
     print(f'You input {command}')
     current_room = rooms[current_room.exits['north']]

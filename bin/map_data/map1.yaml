@@ -15,3 +15,5 @@ rooms:
     description: "racks of rusty weapons and armor. There's a feeling of old battles here."
     exits:
       west: 'Entrance Hall'
+
+
