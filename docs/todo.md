@@ -1,28 +1,19 @@
 # Matt
-* python basics
-* practice git
-* shadow someone else 
-* play zork
+* implement gameloop
+* user input
+* game output
 
 # Marcus 
-* build command lists
+* implement commands
     - what commands will we recognize
     - what will the commands do
     - what synonyms will we recognize (also shorthand)
     - build the 'help' page
-* play zork
-* set up main branch protections and merge requests   
-* python objects   
-    * setup user class 
-        * setup inventory 
-    * setup room class 
-    * setup entity class 
-        - user is entity, or something separate?
-    * setup item class
+* initialize player 
+    - inventory 
 
 # Kolter
-* practice git
-* describe xml/yml formatting for map data 
+* implement rooms/items
 
 
 # To Be Assigned
