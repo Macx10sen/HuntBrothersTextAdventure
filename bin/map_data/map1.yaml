@@ -1,19 +1,24 @@
 rooms:
   - name: 'Entrance Hall'
     description: 'a grand, echoing entrance with marble floors.'
-    exits:
-      north: 'Library'
-      east: 'Armory'
 
   - name: 'Library'
     description: 'dusty shelves filled with ancient tomes. A faint smell of parchment lingers.'
-    exits:
-      south: 'Entrance Hall'
-      west: 'Study'
 
   - name: 'Armory'
     description: "racks of rusty weapons and armor. There's a feeling of old battles here."
-    exits:
+
+connections:
+  - rooms:
+      south: 'Entrance Hall'
+      north: 'Library'
+    description: 'a large doorway'
+    locked: false
+
+  - rooms:
       west: 'Entrance Hall'
+      east: 'Armory'
+    description: 'a smaller doorway'
+    locked: false
 
 
