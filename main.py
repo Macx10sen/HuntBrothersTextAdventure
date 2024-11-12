@@ -8,3 +8,4 @@ while True:
     command = input('Input your command: ')
     print(f'You input {command}')
     current_room = rooms[current_room.exits['north']]
+    # current_room = current_room.move(direction)

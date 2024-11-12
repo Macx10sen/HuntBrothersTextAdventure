@@ -8,13 +8,13 @@ def get_rooms():
     with open(map_file_path, 'r') as map_file:
         map_data = yaml.load(map_file, Loader=yaml.SafeLoader)
         room_data = map_data['rooms']
-        connection_data = map_data['connections']
     rooms = {}
     for room in room_data:
         name = room['name']
         description = room['description']
-        rooms[name] = Room(name, description)
-        rooms[name].get_exits(connection_data)
+        exits = room['exits']
+        rooms[name] = Room(name, description, exits)
+        # rooms[name].get_exits(connection_data)
     return rooms
 
 if __name__ == '__main__':
