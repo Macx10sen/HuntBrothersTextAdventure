@@ -13,14 +13,9 @@ def get_rooms():
     for room in room_data:
         name = room['name']
         description = room['description']
-        exits = get_connections(connection_data)
-        exits = {}
-        rooms[name] = Room(name, description, exits)
+        rooms[name] = Room(name, description)
+        rooms[name].get_exits(connection_data)
     return rooms
-
-def get_connections(connection_data):
-    for connection in connection_data:
-        print(connection)
 
 if __name__ == '__main__':
     from rooms import Room
