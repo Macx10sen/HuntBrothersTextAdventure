@@ -52,6 +52,7 @@
 * poison belt
 * key ring
 * journal
+* ladder
 
 
 
