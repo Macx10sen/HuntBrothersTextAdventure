@@ -1,18 +1,18 @@
 # HuntBrothersTextAdventure
 Collaboration space for a Text Adventure Program among friends
 
-#Titles
-*Kolter
-	-Project Manager
+# Titles
+* Kolter
+	- Project Manager
 
-*Matt
-	-Board Director
+* Matt
+	- Board Director
 	
-*Marcus
-	-Lead Engineer
+* Marcus
+	- Lead Engineer
 	
-*Beth
-	-KISS(Keep it simple, stupid) Tester -- Later
+* Beth
+	- KISS(Keep it simple, stupid) Tester -- Later
 	
-*Kambree
-	-KISS(Keep it simple, stupid) Tester -- Later
+* Kambree
+	- KISS(Keep it simple, stupid) Tester -- Later
