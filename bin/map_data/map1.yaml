@@ -8,12 +8,12 @@ Entrance Hall:
     east:
       destination: 'Armory'
       description: 'a smaller doorway'
-      locked: false
+      locked: true
 
 Library:
   description: 'dusty shelves filled with ancient tomes. A faint smell of parchment lingers.'
   exits: 
-    east: 
+    south: 
       destination: 'Entrance Hall'
       description: 'a large doorway'
       locked: false

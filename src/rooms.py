@@ -10,9 +10,17 @@ class Room: #create Room class
     self.exits[direction] = exit
 
   def move(self, direction):
+    error_message = ''
+    new_room = None
     if direction in self.exits:
-      return self.exits[direction].destination
-    return None
+      exit = self.exits[direction]
+      if not exit.locked:
+        new_room = self.exits[direction].destination
+      else:
+        error_message = 'That way is locked'
+    else: 
+      error_message = "You can't go there."
+    return (new_room, error_message)
 
 class Exit:
   def __init__(self, direction, destination_name, description, locked):

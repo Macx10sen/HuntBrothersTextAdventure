@@ -4,12 +4,11 @@ current_room = get_rooms()
 
 while True:
     print(f'Current Room: {current_room.name}')
-    command = input('Input your command: ')
-    print(f'You input {command}')
-    print(f'Moving north...')
-    new_room = current_room.move('north')
+    command = input('Move Direction: ')
+    print(f'Moving {command}...')
+    new_room, error_message = current_room.move(command)
     if new_room == None:
-        print("You can't go there.")
+        print(error_message)
     else:
         current_room = new_room
 
