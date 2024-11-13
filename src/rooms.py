@@ -9,6 +9,11 @@ class Room: #create Room class
   def add_exit(self, direction, exit):
     self.exits[direction] = exit
 
+  def move(self, direction):
+    if direction in self.exits:
+      return self.exits[direction].destination
+    return None
+
 class Exit:
   def __init__(self, direction, destination_name, description, locked):
     self.direction = direction

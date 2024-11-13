@@ -8,7 +8,11 @@ while True:
     command = input('Input your command: ')
     print(f'You input {command}')
     print(f'Moving north...')
-    current_room = current_room.exits['north'].destination
+    new_room = current_room.move('north')
+    if new_room == None:
+        print("You can't go there.")
+    else:
+        current_room = new_room
 
 '''
 gameloop:
