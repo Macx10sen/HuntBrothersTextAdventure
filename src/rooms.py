@@ -13,14 +13,19 @@ class Room: #create Room class
     error_message = ''
     new_room = None
     if direction in self.exits:
-      exit = self.exits[direction]
-      if not exit.locked:
-        new_room = self.exits[direction].destination
+      if not self.is_locked(direction):
+        new_room = self.get_destination(direction)
       else:
         error_message = 'That way is locked'
     else: 
       error_message = "You can't go there."
     return (new_room, error_message)
+
+  def is_locked(self, direction):
+    return self.exits[direction].locked
+
+  def get_destination(self, direction):
+    return self.exits[direction].destination
 
 class Exit:
   def __init__(self, direction, destination_name, description, locked):
