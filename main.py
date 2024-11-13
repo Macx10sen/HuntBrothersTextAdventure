@@ -1,7 +1,6 @@
 from src.read_map_data import get_rooms
 
-rooms = get_rooms()
-current_room = rooms['Entrance Hall']
+current_room = get_rooms()
 
 while True:
     print(f'Current Room: {current_room.name}')
