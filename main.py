@@ -9,3 +9,14 @@ while True:
     print(f'You input {command}')
     current_room = rooms[current_room.exits['north']]
     # current_room = current_room.move(direction)
+
+'''
+gameloop:
+    print room 
+        name
+        description
+        exits
+        items
+    get user input
+    process command
+'''
