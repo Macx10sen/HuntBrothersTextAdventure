@@ -4,11 +4,11 @@ rooms = get_rooms()
 current_room = rooms['Entrance Hall']
 
 while True:
-    current_room.output('verbose')
+    print(f'Current Room: {current_room.name}')
     command = input('Input your command: ')
     print(f'You input {command}')
-    current_room = rooms[current_room.exits['north']]
-    # current_room = current_room.move(direction)
+    print(f'Moving north...')
+    current_room = current_room.exits['north'].destination
 
 '''
 gameloop:

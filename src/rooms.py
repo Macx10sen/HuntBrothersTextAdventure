@@ -1,29 +1,21 @@
 #rooms
 
 class Room: #create Room class
-  def __init__(self, name, description, exits): #define room
+  def __init__(self, name, description): #define room
     self.name = name
     self.description = description
-    self.exits = exits
+    self.exits = {}
 
-  def __str__(self):
-    return self.name
+  def add_exit(self, direction, exit):
+    self.exits[direction] = exit
 
-  def output(self, level='verbose'):
-    if level == 'verbose':
-      print(f'You are in the {self.name}. ', end='')
-      exit_directions = list(self.exits.keys())
+class Exit:
+  def __init__(self, direction, destination_name, description, locked):
+    self.direction = direction
+    self.destination = None
+    self.destination_name = destination_name
+    self.description = description
+    self.locked = locked
 
-      if not exit_directions:
-        print('There are no visible exits.')
-      elif len(exit_directions) == 1:
-        print(f'You see an exit to the {exit_directions[0]}.')
-      elif len(exit_directions) == 2:
-        print(f'You see exits to the {exit_directions[0]} and {exit_directions[1]}.')
-      else:
-        print(f'You see exits to the {", ".join(exit_directions[:-1])}, and {exit_directions[-1]}.')
-
-      print(f'When you look around you see {self.description}')
-
-    if level == 'brief':
-      print(f'You are in the {self.name}.')
+  def add_destination(self, destination):
+    self.destination = destination
