@@ -10,9 +10,12 @@ Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat 
      #help shortcuts, help shortcuts[cmd]? show acceptable shorthand for various commands? specific commands? both?
 
 def input_parsing(current_room,cmd):
-    cmd = cmd.lower()
-    new_room, error_message = current_room.move(cmd)
-    if new_room == None:
-        print(error_message)
-    else:
-        return new_room
+    cmd                     = cmd.lower().split()
+    primary_cmd             = cmd[0]
+    secondary_cmds          = cmd[1:]
+    if primary_cmd == "move" or primary_cmd == "m":
+        new_room, error_message = current_room.move(secondary_cmds[0])
+        if new_room == None:
+            print(error_message)
+        else:
+            return new_room
