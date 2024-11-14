@@ -1,5 +1,6 @@
 from src.read_map_data import get_rooms
 from src.cmds import input_parsing
+
 current_room = get_rooms()
 
 while True:

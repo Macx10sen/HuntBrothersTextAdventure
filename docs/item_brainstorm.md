@@ -53,6 +53,8 @@
 * key ring
 * journal
 * ladder
+* notepad
+
 
 
 
