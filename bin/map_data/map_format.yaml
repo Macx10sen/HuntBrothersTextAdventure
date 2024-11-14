@@ -1,0 +1,5 @@
+rooms:
+  - name: 'Room Name'
+    description: 'Room Description'
+    exits:
+      direction: 'Room Name'
