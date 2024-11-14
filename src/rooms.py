@@ -6,6 +6,17 @@ class Room: #create Room class
     self.description = description
     self.exits = {}
 
+  def output(self):
+    print(f'\n{self.name}')
+    output = ''
+    output = f'You are in the {self.name}. When you look around you see {self.description} '
+    for exit_direction in self.exits:
+      output += f'You see {self.get_exit_description(exit_direction)} to the {exit_direction}. '
+    print(f'{output}\n')
+
+  def get_exit_description(self, direction):
+    return self.exits[direction].description
+
   def add_exit(self, direction, exit):
     self.exits[direction] = exit
 

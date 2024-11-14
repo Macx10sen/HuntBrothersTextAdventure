@@ -17,5 +17,16 @@ def input_parsing(current_room,cmd):
         new_room, error_message = current_room.move(secondary_cmds[0])
         if new_room == None:
             print(error_message)
+            return current_room
         else:
             return new_room
+
+'''
+move - go, walk, run, head
+
+commands = {'move': move, 
+            'go':   'move', 
+            'walk': 'move'}
+if cmd in commands.keys():
+    commands['go']()
+'''

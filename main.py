@@ -3,7 +3,7 @@ from src.cmds import input_parsing
 current_room = get_rooms()
 
 while True:
-    print(f'Current Room: {current_room.name}')
+    current_room.output()
     command = input('--> ')
     current_room = input_parsing(current_room,command)
 
