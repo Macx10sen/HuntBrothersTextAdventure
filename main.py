@@ -1,16 +1,11 @@
 from src.read_map_data import get_rooms
-
+from src.cmds import input_parsing
 current_room = get_rooms()
 
 while True:
     print(f'Current Room: {current_room.name}')
-    command = input('Move Direction: ')
-    print(f'Moving {command}...')
-    new_room, error_message = current_room.move(command)
-    if new_room == None:
-        print(error_message)
-    else:
-        current_room = new_room
+    command = input('--> ')
+    current_room = input_parsing(current_room,command)
 
 '''
 gameloop:
