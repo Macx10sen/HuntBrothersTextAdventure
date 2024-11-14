@@ -12,7 +12,7 @@
 	
 * task/
 	- all code changes wil be made inside of a task branch. 
-	- name the branch task/[TaskName] using CamelCase. Example: tasks/RoomClass
+	- name the branch task/[TaskName] using camelCase. Example: tasks/roomClass
 	- branch off of dev
 	- merge requests required
 	
