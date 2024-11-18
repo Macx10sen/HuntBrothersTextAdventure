@@ -1,7 +1,9 @@
 # Matt
-* implement gameloop
-* user input
-* game output
+* finish python video
+* build mini project with classes
+* put gameloop in it's own function
+* design room map
+
 
 # Marcus 
 * implement commands
@@ -13,6 +15,7 @@
     - inventory 
 
 # Kolter
+* door passwords
 * implement rooms/items
 
 
