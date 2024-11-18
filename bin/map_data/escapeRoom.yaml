@@ -1,0 +1,27 @@
+Entrance Hall:
+  description: 'a grand, echoing entrance with marble floors.'
+  exits: 
+    north:
+      destination: 'Library'
+      description: 'a large doorway'
+      locked: false
+    east:
+      destination: 'Armory'
+      description: 'a smaller doorway'
+      locked: true
+
+Library:
+  description: 'dusty shelves filled with ancient tomes. A faint smell of parchment lingers.'
+  exits: 
+    south: 
+      destination: 'Entrance Hall'
+      description: 'a large doorway'
+      locked: false
+
+Armory:
+  description: "racks of rusty weapons and armor. There's a feeling of old battles here."
+  exits:
+    west:
+      destination: 'Entrance Hall'
+      description: 'a smaller doorway'
+      locked: false
