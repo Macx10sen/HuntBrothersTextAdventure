@@ -8,7 +8,7 @@ player = Player(player_name)
 player.current_room = get_rooms()
 
 while True:
-    player.current_room.output()
+    player.get_room()
     command = input('--> ')
     player.current_room = input_parsing(player.current_room,command)
 
