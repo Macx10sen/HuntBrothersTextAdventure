@@ -12,5 +12,5 @@ class Player:
     def add_to_inv(self,item):
         self.inventory.append(item)
 
-    def get_room(self):
+    def display_room(self):
         self.current_room.output()
