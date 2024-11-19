@@ -9,17 +9,16 @@ Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat 
      #Eat Options      : Limited by food items in hand. use for hunger bar? or health regen? Item Subtype?
      #help shortcuts, help shortcuts[cmd]? show acceptable shorthand for various commands? specific commands? both?
 
-def input_parsing(current_room,cmd):
+def input_parsing(player,cmd):
     cmd                     = cmd.lower().split()
     primary_cmd             = cmd[0]
     secondary_cmds          = cmd[1:]
     if primary_cmd == "move" or primary_cmd == "m":
-        new_room, error_message = current_room.move(secondary_cmds[0])
+        new_room, error_message = player.current_room.move(secondary_cmds[0])
         if new_room == None:
             print(error_message)
-            return current_room
         else:
-            return new_room
+            player.current_room = new_room
 
 '''
 move - go, walk, run, head

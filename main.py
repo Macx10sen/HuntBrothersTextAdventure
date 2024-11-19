@@ -10,7 +10,7 @@ player.current_room = get_rooms()
 while True:
     player.get_room()
     command = input('--> ')
-    player.current_room = input_parsing(player.current_room,command)
+    input_parsing(player,command)
 
 '''
 gameloop:
