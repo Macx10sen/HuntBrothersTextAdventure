@@ -6,8 +6,11 @@ class Player:
         self.current_room    = None
         self.inventory       = []
 
-    def get_inv(self):
-        return self.inventory
+    def display_inv(self):
+        if self.inventory:
+            return self.inventory
+        else:
+            return "Your inventory is Empty"
 
     def add_to_inv(self,item):
         self.inventory.append(item)

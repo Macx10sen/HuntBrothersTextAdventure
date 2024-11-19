@@ -19,6 +19,15 @@ def input_parsing(player,cmd):
             print(error_message)
         else:
             player.current_room = new_room
+    elif primary_cmd == "check" or primary_cmd == "c":
+        if secondary_cmds[0] == "inventory":
+            print(player.display_inv())
+        elif secondary_cmds[0] == "room":
+            player.display_room()
+    elif primary_cmd == "grab" or primary_cmd == "g":
+        player.add_to_inv(secondary_cmds[0])
+    else:
+        print(f"{player.name}, that is not a valid command. Please try again")
 
 '''
 move - go, walk, run, head
