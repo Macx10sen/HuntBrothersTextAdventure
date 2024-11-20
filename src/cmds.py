@@ -4,10 +4,9 @@ def move(player, cmd):
     new_room, error_message = player.current_room.move(cmd)
     if new_room == None:
         print(error_message)
-        player.display_room()
     else:
         player.current_room = new_room
-        player.display_room()
+    player.display_room()
 
 def check(player, cmd):
     if cmd == "inventory":
