@@ -14,12 +14,31 @@ def move(player, cmd):
         player.display_room()
 
 def unlock(player, cmd):
-    if cmd in direction_syns:
-        direction = direction_syns[cmd]
-    else: 
-        print("There isn't even a door over there...")
+    if cmd != 'door':
+        print('What would you like to unlock?')
         return
-    status_message = player.current_room.unlock(player, direction)
+
+    locked_exits = []
+    for exit in player.get_exits():
+        if player.is_locked(exit):
+            locked_exits.append(exit)
+
+    if len(locked_exits) == 0:
+        status_message = 'Dude... nothing is locked...'
+    if len(locked_exits) > 2:
+        unlock_options = ', '.join(locked_exits[:-1])
+        unlock_options += f', or {locked_exits[-1]}' 
+        unlock_options += '.'
+        print(f'There are locked doors to the {unlock_options}')
+    elif len(locked_exits) > 1:
+        unlock_options = ' or '.join(locked_exits)
+        unlock_options += '.'
+        print(f'There are locked doors to the {unlock_options}')
+        status_message = f'Which way would you like to go?'
+    else:
+        print(f'There is a locked door to the {locked_exits[0]}')
+        status_message = player.current_room.unlock(player, locked_exits[0])
+
     print(status_message)
 
 def check(player, cmd):
@@ -39,10 +58,10 @@ def exit():
 
 
 #cmd synonyms -- add to or change these as needed
-move_syn = ["move", "m", "go", "travel", "walk", "run"]
+move_syn = ["move", "m", "go", 'g', "travel", "walk", "run"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
-grab_syn = ["grab", "g", "obtain", "pick", "take"] #pick?
+grab_syn = ["grab", "obtain", "pick", "take"] #pick?
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
 inventory_syn = ['inventory', 'i']
@@ -106,6 +125,8 @@ def input_parsing(player,cmd):
     elif primary_cmd in exit_syn:
         exit()
     elif primary_cmd in unlock_syn:
+        if len(secondary_cmds) == 0:
+            secondary_cmds = ['']
         unlock(player, secondary_cmds[0])
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")

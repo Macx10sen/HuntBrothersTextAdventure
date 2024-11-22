@@ -4,7 +4,8 @@ Entrance Hall:
     north:
       destination: 'Library'
       description: 'a large doorway'
-      locked: false
+      locked: true
+      password: 'Password01'
     east:
       destination: 'Armory'
       description: 'a smaller doorway'

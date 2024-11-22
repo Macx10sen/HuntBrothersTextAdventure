@@ -17,3 +17,12 @@ class Player:
 
     def display_room(self):
         self.current_room.output()
+
+    def get_exits(self):
+        return self.current_room.exits
+
+    def get_exit(self, direction):
+        return self.current_room.exits[direction]
+
+    def is_locked(self, direction):
+        return self.current_room.exits[direction].locked
