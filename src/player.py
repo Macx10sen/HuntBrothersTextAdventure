@@ -10,7 +10,7 @@ class Player:
         if self.inventory:
             return self.inventory
         else:
-            return "Your inventory is Empty"
+            return "Your inventory is empty"
 
     def add_to_inv(self,item):
         self.inventory.append(item)

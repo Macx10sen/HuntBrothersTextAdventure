@@ -9,9 +9,9 @@ def move(player, cmd):
         player.display_room()
 
 def check(player, cmd):
-    if cmd == "inventory":
+    if cmd in inventory_syn: 
         print(player.display_inv())
-    elif cmd == "room":
+    elif cmd in room_syn:
         player.display_room()
 
 def grab(player, item):
@@ -23,12 +23,14 @@ def exit():
         sys.exit(0)
 
 #cmd synonyms -- add to or change these as needed
-move_syn = ["move", "m", "go", "g", "travel", "walk", "run"]
+move_syn = ["move", "m", "go", "travel", "walk", "run"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
 grab_syn = ["grab", "g", "obtain", "pick"] #pick?
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
+inventory_syn = ['inventory', 'i']
+room_syn = ['room', 'r']
 
 #cmd list
 
