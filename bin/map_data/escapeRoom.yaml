@@ -9,6 +9,7 @@ Entrance Hall:
       destination: 'Armory'
       description: 'a smaller doorway'
       locked: true
+      password: 'hunt'
 
 Library:
   description: 'dusty shelves filled with ancient tomes. A faint smell of parchment lingers.'

@@ -1,7 +1,7 @@
 import sys
 
 def move(player, cmd):
-    new_room, error_message = player.current_room.move(cmd)
+    new_room, error_message = player.current_room.move(player, cmd)
     if new_room == None:
         print(error_message)
     else:

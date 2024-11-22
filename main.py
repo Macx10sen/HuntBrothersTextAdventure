@@ -3,6 +3,7 @@ from src.cmds import input_parsing
 from src.player import Player
 print(f'\nHunt Brothers Text Adventures Presents:\nEscape Room!')
 player_name = input(f'\nWelcome to the Escape Room! Please enter your name.\n--> ')
+print()
 
 player = Player(player_name)
 player.current_room = get_rooms()
