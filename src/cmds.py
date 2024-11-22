@@ -30,7 +30,7 @@ def exit():
 move_syn = ["move", "m", "go", "travel", "walk", "run"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
-grab_syn = ["grab", "g", "obtain", "pick"] #pick?
+grab_syn = ["grab", "g", "obtain", "pick", "take"] #pick?
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
 inventory_syn = ['inventory', 'i']
