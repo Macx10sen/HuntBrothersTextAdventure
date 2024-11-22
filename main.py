@@ -11,7 +11,7 @@ player.display_room() #display room before beginning loop, comment this line to 
 
 while True:
 #    player.display_room() #comment this line to remove from loop
-    command = input('--> ')
+    command = input('\n--> ')
     input_parsing(player,command)
 
 '''

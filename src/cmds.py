@@ -1,4 +1,4 @@
-#all commands will be in this file
+import sys
 
 def move(player, cmd):
     new_room, error_message = player.current_room.move(cmd)
@@ -6,7 +6,7 @@ def move(player, cmd):
         print(error_message)
     else:
         player.current_room = new_room
-    player.display_room()
+        player.display_room()
 
 def check(player, cmd):
     if cmd == "inventory":
@@ -17,11 +17,18 @@ def check(player, cmd):
 def grab(player, item):
     player.add_to_inv(item)
 
+def exit():
+    exit_confirmation = input('Type yes to confirm: ').lower()
+    if exit_confirmation == 'yes' or exit_confirmation == 'y':
+        sys.exit(0)
+
 #cmd synonyms -- add to or change these as needed
 move_syn = ["move", "m", "go", "g", "travel", "walk", "run"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
 grab_syn = ["grab", "g", "obtain", "pick"] #pick?
+exit_syn = ['exit']
+yes_syn = ['yes', 'y']
 
 #cmd list
 
@@ -49,8 +56,10 @@ def input_parsing(player,cmd):
         check(player, secondary_cmds[0])
     elif primary_cmd in grab_syn:
         grab(player, secondary_cmds[0])
+    elif primary_cmd in exit_syn:
+        exit()
     else:
-        print(f"{player.name}, that is not a valid command. Please try again")
+        print(f"{player.name}, that is not a valid command. Please try again.")
 
 '''
 move - go, walk, run, head
