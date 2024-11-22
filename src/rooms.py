@@ -27,18 +27,34 @@ class Room: #create Room class
       if not self.is_locked(direction):
         new_room = self.get_destination(direction)
       else:
-        if self.get_password(direction):
-          new_room = self.get_destination(direction)
-        else:
-          error_message = f"That's the wrong password, {player.name}... idiot."
+        error_message = "The door is locked. It looks like you can type in a password."
     else: 
       error_message = "You can't go there."
     return (new_room, error_message)
 
-  def get_password(self, direction):
-    input_password = input('That way is locked. Please enter password:\n--> ')
-    actual_password = self.exits[direction].password
+  def unlock(self, player, direction):
+    if direction not in self.exits:
+      status_message = "You can't go that way."
+      return status_message
+    if not self.is_locked(direction):
+      status_message = "That way isn't even locked, have you tried turning the doorknob?"
+      return status_message
+    if not self.correct_password(direction):
+      status_message = f"That's the wrong password, {player.name}... idiot."
+      return status_message
+
+    # The door is set to unlocked
+    self.exits[direction].locked = False
+    status_message = f"You hear a small click."
+    return (status_message)
+
+  def correct_password(self, direction):
+    input_password = input('You see a keyboard. Please enter the password:\n--> ')
+    actual_password = self.get_password(direction)
     return input_password == actual_password
+
+  def get_password(self, direction):
+    return self.exits[direction].password
 
   def is_locked(self, direction):
     return self.exits[direction].locked

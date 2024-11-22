@@ -8,6 +8,10 @@ def move(player, cmd):
         player.current_room = new_room
         player.display_room()
 
+def unlock(player, cmd):
+    status_message = player.current_room.unlock(player, cmd)
+    print(status_message)
+
 def check(player, cmd):
     if cmd in inventory_syn: 
         print(player.display_inv())
@@ -31,15 +35,16 @@ exit_syn = ['exit']
 yes_syn = ['yes', 'y']
 inventory_syn = ['inventory', 'i']
 room_syn = ['room', 'r']
+unlock_syn = ['unlock']
 
 #cmd list
 
 '''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]  
-     #Move Options     : North, East, South, West; Depending on what room the character is located in. Use "help move" to see options
-     #Check Options    : Health, Hunger?, Inventory (inventory sub types?). Use "help check" to see options
-     #Grab Options     : Limited by items in the room the character is located in. Use "help grab" to see options
-     #Store Options    : Limited by items currently in the characters hands. Use "help store" to see options. Also "Check Inventory Hands"?
-     #Eat Options      : Limited by food items in hand. use for hunger bar? or health regen? Item Subtype?
+     #Move Options: North, East, South, West; Depending on what room the character is located in. Use "help move" to see options
+     #Check Options: Health, Hunger?, Inventory (inventory sub types?). Use "help check" to see options
+     #Grab Options: Limited by items in the room the character is located in. Use "help grab" to see options
+     #Store Options: Limited by items currently in the characters hands. Use "help store" to see options. Also "Check Inventory Hands"?
+     #Eat Options: Limited by food items in hand. use for hunger bar? or health regen? Item Subtype?
      #help shortcuts, help shortcuts[cmd]? show acceptable shorthand for various commands? specific commands? both?'''
 
 
@@ -49,9 +54,9 @@ def input_parsing(player,cmd):
 #        {check_syn: check()},
 #        {grab_syn:  grab()}
 #    ]
-    cmd                     = cmd.lower().split()
-    primary_cmd             = cmd[0]
-    secondary_cmds          = cmd[1:]
+    cmd = cmd.lower().split()
+    primary_cmd = cmd[0]
+    secondary_cmds = cmd[1:]
     if primary_cmd in move_syn:
         move(player, secondary_cmds[0])
     elif primary_cmd in check_syn:
@@ -60,6 +65,8 @@ def input_parsing(player,cmd):
         grab(player, secondary_cmds[0])
     elif primary_cmd in exit_syn:
         exit()
+    elif primary_cmd in unlock_syn:
+        unlock(player, secondary_cmds[0])
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")
 
