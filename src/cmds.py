@@ -19,7 +19,7 @@ def grab(player, item):
 
 def exit():
     exit_confirmation = input('Type yes to confirm: ').lower()
-    if exit_confirmation == 'yes' or exit_confirmation == 'y':
+    if exit_confirmation in yes_syn: 
         sys.exit(0)
 
 #cmd synonyms -- add to or change these as needed
