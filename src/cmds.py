@@ -39,10 +39,10 @@ def exit():
 
 
 #cmd synonyms -- add to or change these as needed
-move_syn = ["move", "m", "go", "travel", "walk", "run"]
+move_syn = ["move", "m", "go", 'g' "travel", "walk", "run", "to"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
-grab_syn = ["grab", "g", "obtain", "pick", "take"] #pick?
+grab_syn = ["grab", "obtain", "pick", "take"] #pick?
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
 inventory_syn = ['inventory', 'i']
