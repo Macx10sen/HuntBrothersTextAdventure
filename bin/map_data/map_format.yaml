@@ -1,5 +1,8 @@
-rooms:
-  - name: 'Room Name'
-    description: 'Room Description'
-    exits:
-      direction: 'Room Name'
+Room Name:
+  description: 'a room description (lowecase and punctuation).'
+  exits:
+    exit_direction:
+      destination: 'Destination Name'
+      description: 'description of passageway (lowercase, no punctuation)'
+      locked: false
+      password: 'unlock password'

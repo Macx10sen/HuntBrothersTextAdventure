@@ -1,0 +1,18 @@
+White Room:
+  description: 'a room where the walls are painted white.'
+  exits:
+    north:
+      destination: 'Red Room'
+      description: 'a steel door with a red stripe down the center'
+      locked: true
+      password: 'red'
+    south:
+      destination: 'Purple Room'
+      description: 'a wooden door with a purple circle painted in the center'
+
+Red Room:
+  description: 'a room where the walls are painted red.'
+  exits:
+    south:
+      destination: 'White Room'
+      description: 'a steel door with a white stripe down the center'
