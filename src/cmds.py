@@ -1,48 +1,52 @@
 import sys
 
+
 def move(player, cmd):
     if cmd in direction_syns:
         direction = direction_syns[cmd]
-    else: 
+    else:
         print("Why would you want to go that way?")
         return
     new_room, error_message = player.current_room.move(player, direction)
-    if new_room == None:
+    if new_room is None:
         print(error_message)
     else:
         player.current_room = new_room
         player.display_room()
 
+
 def unlock(player, cmd):
     if cmd in direction_syns:
         direction = direction_syns[cmd]
-    else: 
+    else:
         print("There isn't even a door over there...")
         return
     status_message = player.current_room.unlock(player, direction)
     print(status_message)
 
+
 def check(player, cmd):
-    if cmd in inventory_syn: 
+    if cmd in inventory_syn:
         print(player.display_inv())
     elif cmd in room_syn:
         player.display_room()
 
+
 def grab(player, item):
     player.add_to_inv(item)
 
+
 def exit():
     exit_confirmation = input('Type yes to confirm: ').lower()
-    if exit_confirmation in yes_syn: 
+    if exit_confirmation in yes_syn:
         sys.exit(0)
 
 
-
-#cmd synonyms -- add to or change these as needed
+# cmd synonyms -- add to or change these as needed
 move_syn = ["move", "m", "go", 'g' "travel", "walk", "run", "to"]
 check_syn = ["check", "c"]
 help_syn = ["help", "h"]
-grab_syn = ["grab", "obtain", "pick", "take"] #pick?
+grab_syn = ["grab", "obtain", "pick", "take"]  # pick?
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
 inventory_syn = ['inventory', 'i']
@@ -75,9 +79,9 @@ direction_syns = {
 }
 
 
-#cmd list
+# cmd list
 
-'''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]  
+'''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]
      #Move Options: North, East, South, West; Depending on what room the character is located in. Use "help move" to see options
      #Check Options: Health, Hunger?, Inventory (inventory sub types?). Use "help check" to see options
      #Grab Options: Limited by items in the room the character is located in. Use "help grab" to see options
@@ -86,12 +90,12 @@ direction_syns = {
      #help shortcuts, help shortcuts[cmd]? show acceptable shorthand for various commands? specific commands? both?'''
 
 
-def input_parsing(player,cmd):
-#    cmd_list = [
-#        {move_syn:  move()},
-#        {check_syn: check()},
-#        {grab_syn:  grab()}
-#    ]
+def input_parsing(player, cmd):
+    #    cmd_list = [
+    #        {move_syn:  move()},
+    #        {check_syn: check()},
+    #        {grab_syn:  grab()}
+    #    ]
     cmd = cmd.lower().split()
     primary_cmd = cmd[0]
     secondary_cmds = cmd[1:]
@@ -110,11 +114,12 @@ def input_parsing(player,cmd):
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")
 
+
 '''
 move - go, walk, run, head
 
-commands = {'move': move, 
-            'go':   'move', 
+commands = {'move': move,
+            'go':   'move',
             'walk': 'move'}
 if cmd in commands.keys():
     commands['go']()
