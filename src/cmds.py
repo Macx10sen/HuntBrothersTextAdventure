@@ -36,19 +36,70 @@ def exit():
     if exit_confirmation in yes_syn: 
         sys.exit(0)
 
+#help page
+def help(cmd):
+    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
+    if cmd is None:
+        print(primary_cmd_list)
+    elif cmd_exists:
+        if cmd in move_syn:
+            help_move()
+        elif cmd in check_syn:
+            help_check()
+        elif cmd in grab_syn:
+            help_grab()
+        elif cmd in unlock_syn:
+            help_unlock()
+        
+        
+
+
+def learn_move():
+    print("The move command is how you move from room to room.")
+    print("Type a valid move command followed by the\ndirection of the room you want to travel")
+   
+def help_move():
+    print(f"Acceptable move synonyms are {move_syn}")
+    print(f"Acceptable direction synonyms are {direction_syns}")
+
+def learn_check():
+    print("The check command can be used to check the status of\nyour players location or inventory")
+
+def help_check():
+    print(f"Acceptable check synonyms are {check_syn}")
+    print(f"Acceptable secondary commands and appropriate synonyms are\n{inventory_syn} and {room_syn}")
+
+def learn_grab():
+    print("The grab command is used to obtain.\nThis command is limited by the items in the same room as your player")
+
+def help_grab():
+    print(f"Acceptable grab synonyms are {grab_syn}")
+
+def learn_unlock():
+    print("The Unlock command is used to unlock a door in the room you player is located.\nThe direction is limited by the available exits in the room and whether they are locked")
+
+def help_unlock():
+    print(f"Acceptable unlock synonyms are {unlock_syn}")
+        
+        
+
 
 
 #cmd synonyms -- add to or change these as needed
+
+#primary cmds
 move_syn = ["move", "m", "go", 'g' "travel", "walk", "run", "to"]
 check_syn = ["check", "c"]
-help_syn = ["help", "h"]
-grab_syn = ["grab", "obtain", "pick", "take"] #pick?
+grab_syn = ["grab", "obtain", "pick", "take"] 
+unlock_syn = ['unlock', 'u', 'open', 'o']
 exit_syn = ['exit']
 yes_syn = ['yes', 'y']
-inventory_syn = ['inventory', 'i']
-room_syn = ['room', 'r']
-unlock_syn = ['unlock']
+learn_syn = ["learn", "l"]
+help_syn = ["help", "h"]
 
+#secondary cmds
+inventory_syn = ['inventory', 'i']
+room_syn = ['room', 'r','location','l']
 direction_syns = {
     'north': 'north',
     'n': 'north',
@@ -77,6 +128,15 @@ direction_syns = {
 
 #cmd list
 
+primary_cmd_list = [
+    move_syn,#
+    check_syn,#
+    grab_syn,#
+    unlock_syn,#
+    exit_syn,
+    learn_syn,
+    help_syn,
+    ]
 '''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]  
      #Move Options: North, East, South, West; Depending on what room the character is located in. Use "help move" to see options
      #Check Options: Health, Hunger?, Inventory (inventory sub types?). Use "help check" to see options
@@ -87,11 +147,7 @@ direction_syns = {
 
 
 def input_parsing(player,cmd):
-#    cmd_list = [
-#        {move_syn:  move()},
-#        {check_syn: check()},
-#        {grab_syn:  grab()}
-#    ]
+
     cmd = cmd.lower().split()
     primary_cmd = cmd[0]
     secondary_cmds = cmd[1:]
@@ -107,6 +163,8 @@ def input_parsing(player,cmd):
         exit()
     elif primary_cmd in unlock_syn:
         unlock(player, secondary_cmds[0])
+    elif primary_cmd in help_syn:
+        print(cmd_list)
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")
 
