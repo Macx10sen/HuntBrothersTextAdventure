@@ -55,6 +55,8 @@ def help(cmd):
             help_grab()
         elif cmd in unlock_syn:
             help_unlock()
+    else:
+        print("That is not a valid command, Please try again")
         
         
 
@@ -142,8 +144,7 @@ primary_cmd_list = [
     learn_syn,
     help_syn,
     ]
-'''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]  
-'''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ]
+'''Cmds = ["move [direction]", "Check [Stat]", "Grab [item]", "Store [item]", "Eat [item]", "help", "help [cmd]" ] 
      #Move Options: North, East, South, West; Depending on what room the character is located in. Use "help move" to see options
      #Check Options: Health, Hunger?, Inventory (inventory sub types?). Use "help check" to see options
      #Grab Options: Limited by items in the room the character is located in. Use "help grab" to see options
