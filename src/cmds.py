@@ -57,7 +57,22 @@ def help(cmd):
             help_unlock()
     else:
         print("That is not a valid command, Please try again")
-        
+
+def learn(cmd):
+    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
+    if cmd is None:
+        print("Use the learn command to learn what different commands do. Type 'learn' followed by the command you would like to learn")
+    elif cmd_exists:
+        if cmd in move_syn:
+            learn_move()
+        elif cmd in check_syn:
+            learn_check()
+        elif cmd in grab_syn:
+            learn_grab()
+        elif cmd in unlock_syn:
+            learn_unlock()
+    else: 
+        print("That command does not exist, Please try again")
         
 
 
@@ -171,7 +186,9 @@ def input_parsing(player,cmd):
     elif primary_cmd in unlock_syn:
         unlock(player, secondary_cmds[0])
     elif primary_cmd in help_syn:
-        print(cmd_list)
+        help(secondary_cmds[0])
+    elif primary_cmd in learn_syn:
+        learn(secondary_cmds[0])
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")
 
