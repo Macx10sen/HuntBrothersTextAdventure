@@ -2,6 +2,7 @@ from cmd import commands
 
 
 def main():
+    load_commands()
     gameloop()
 
 
@@ -25,6 +26,10 @@ def parse_input(cmds):
                 print()
                 return
     print(f'Command Unknown: {primary_cmd}\n')
+
+
+def load_commands():
+
 
 
 main()

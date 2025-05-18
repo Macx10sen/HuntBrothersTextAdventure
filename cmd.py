@@ -1,10 +1,6 @@
 import sys
 
 
-def move(cmds):
-    print('Move')
-
-
 def look(cmds):
     print("Look")
 
@@ -45,35 +41,5 @@ def help(cmds):
         print('\n')
 
 
-commands = {
-    'move': {
-        'synonyms': ['move', 'm', 'go', 'g'],
-        'function': move,
-        'definition': 'Move to another location.'
-    },
-    'look': {
-        'synonyms': ['look', 'l', 'check', 'c'],
-        'function': look,
-        'definition': 'Look around or look at specific item'
-    },
-    'unlock': {
-        'synonyms': ['unlock', 'open', 'o'],
-        'function': unlock,
-        'definition': 'Unlock door or object.'
-    },
-    'drop': {
-        'synonyms': ['drop', 'put down'],
-        'function': drop,
-        'definition': 'Drop item from inventory'
-    },
-    'exit': {
-        'synonyms': ['exit'],
-        'function': exit_game,
-        'definition': 'Exit the game'
-    },
-    'help': {
-        'synonyms': ['help', 'h'],
-        'function': help,
-        'definition': 'Show help message'
-    }
+commands = {}
 }
