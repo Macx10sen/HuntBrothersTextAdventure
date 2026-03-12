@@ -43,10 +43,11 @@ def exit():
 
 #help page
 def help(cmd):
-    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
     if cmd is None:
         print(primary_cmd_list)
-    elif cmd_exists:
+        return
+    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
+    if cmd_exists:
         if cmd in move_syn:
             help_move()
         elif cmd in check_syn:
@@ -59,10 +60,11 @@ def help(cmd):
         print("That is not a valid command, Please try again")
 
 def learn(cmd):
-    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
     if cmd is None:
         print("Use the learn command to learn what different commands do. Type 'learn' followed by the command you would like to learn")
-    elif cmd_exists:
+        return
+    cmd_exists = any(cmd in cmd_syns for cmd_syns in primary_cmd_list)
+    if cmd_exists:
         if cmd in move_syn:
             learn_move()
         elif cmd in check_syn:
@@ -110,7 +112,7 @@ def help_unlock():
 #cmd synonyms -- add to or change these as needed
 
 #primary cmds
-move_syn = ["move", "m", "go", 'g' "travel", "walk", "run", "to"]
+move_syn = ["move", "m", "go", "g", "travel", "walk", "run", "to"]
 check_syn = ["check", "c"]
 grab_syn = ["grab", "obtain", "pick", "take"] 
 unlock_syn = ['unlock', 'u', 'open', 'o']
@@ -173,22 +175,35 @@ def input_parsing(player,cmd):
     cmd = cmd.lower().split()
     primary_cmd = cmd[0]
     secondary_cmds = cmd[1:]
+    secondary = secondary_cmds[0] if secondary_cmds else None
     if primary_cmd in move_syn:
-        move(player, secondary_cmds[0])
+        if secondary is None:
+            print("Move which direction?")
+        else:
+            move(player, secondary)
     elif primary_cmd in direction_syns:
         move(player, primary_cmd)
     elif primary_cmd in check_syn:
-        check(player, secondary_cmds[0])
+        if secondary is None:
+            print("Check what? Try 'check inventory' or 'check room'.")
+        else:
+            check(player, secondary)
     elif primary_cmd in grab_syn:
-        grab(player, secondary_cmds[0])
+        if secondary is None:
+            print("Grab what?")
+        else:
+            grab(player, secondary)
     elif primary_cmd in exit_syn:
         exit()
     elif primary_cmd in unlock_syn:
-        unlock(player, secondary_cmds[0])
+        if secondary is None:
+            print("Unlock which direction?")
+        else:
+            unlock(player, secondary)
     elif primary_cmd in help_syn:
-        help(secondary_cmds[0])
+        help(secondary)
     elif primary_cmd in learn_syn:
-        learn(secondary_cmds[0])
+        learn(secondary)
     else:
         print(f"{player.name}, that is not a valid command. Please try again.")
 
